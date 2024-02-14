@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import TrainersDetails from "./pages/admin/TrainersDetails";
 import CompaniesDetails from "./pages/admin/CompaniesDetails";
 import BusinessRequestsDetails from "./pages/admin/BusinessRequestDetails";
+import PurchaseOrderComponent from "./pages/admin/PurchaseOrderComponent";
 
 function App() {
   return (
@@ -61,6 +62,15 @@ function App() {
           element={
             <ProtectedRoute
               component={BusinessRequestsDetails}
+              roles={["admin", "company"]}
+            />
+          }
+        />
+        <Route
+          path="/purchase-orders"
+          element={
+            <ProtectedRoute
+              component={PurchaseOrderComponent}
               roles={["admin", "company"]}
             />
           }

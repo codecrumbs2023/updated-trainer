@@ -1,7 +1,8 @@
+//revenue stalling 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+//import Chart from "chart.js/auto";
  
 function RevenueAnalysisPage() {
   const [quarterlyRevenue, setQuarterlyRevenue] = useState([]);
@@ -43,22 +44,26 @@ function RevenueAnalysisPage() {
   };
  
   return (
-    <div>
-      <h4 className="text-lg font-bold mb-4">Quarterly Revenue Analysis:</h4>
-      <div className="mb-4" style={{ width: "50%", margin: "0 auto" }}>
-        {/* Render the chart */}
-        <Bar
-          data={quarterlyRevenueData}
-          options={{
-            scales: {
-              y: {
-                beginAtZero: true,
+    <div className="bg-gray-100 min-h-screen py-8">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl font-bold mb-4 text-purple-700 text-center">
+          Quarterly Revenue Analysis
+        </h2>
+        <div className="mb-4 mx-auto w-3/4">
+          {/* Render the chart */}
+          <Bar
+            data={quarterlyRevenueData}
+            options={{
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
               },
-            },
-          }}
-          width={400} // Adjust width as needed
-          height={300} // Adjust height as needed
-        />
+            }}
+            width={400} // Adjust width as needed
+            height={300} // Adjust height as needed
+          />
+        </div>
       </div>
     </div>
   );

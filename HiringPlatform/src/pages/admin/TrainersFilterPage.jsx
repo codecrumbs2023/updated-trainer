@@ -21,16 +21,21 @@ function TrainersFilterPage() {
       // Filter by charge per day
       if (filterChargePerDay) {
         filteredData = filteredData.filter(
-          (trainer) => trainer.chargePerDay <= filterChargePerDay
+          (trainer) => trainer.chargePerDay <= parseFloat(filterChargePerDay)
         );
       }
  
-      setFilteredTrainers(filteredData);
+      // Check if both conditions are true
+      if (filterSkills && filterChargePerDay) {
+        setFilteredTrainers(filteredData);
+      } else {
+        // Reset filtered trainers if one or both conditions are not met
+        setFilteredTrainers([]);
+      }
     } catch (error) {
       console.error("Error fetching trainers:", error);
     }
   };
- 
   return (
     <>
       <div className="bg-gray-100 min-h-screen">

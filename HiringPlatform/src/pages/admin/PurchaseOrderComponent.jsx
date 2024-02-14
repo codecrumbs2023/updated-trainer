@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AdminNavbar from "../../components/AdminNavbar";
+import { useNavigate } from "react-router-dom";
 
 function PurchaseOrderComponent() {
   const [purchaseOrders, setPurchaseOrders] = useState([]);
@@ -19,6 +21,8 @@ function PurchaseOrderComponent() {
   };
 
   return (
+    <>
+    <AdminNavbar/>
     <div>
       <h2 className="text-lg font-bold mb-4">Purchase Orders</h2>
       <table className="w-full border-collapse border border-gray-300">
@@ -50,6 +54,7 @@ function PurchaseOrderComponent() {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 

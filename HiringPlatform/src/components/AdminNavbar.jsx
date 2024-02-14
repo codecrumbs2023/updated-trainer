@@ -52,7 +52,7 @@ function AdminNavbar() {
         </li>
         <li className="mr-6">
           <NavLink
-            to="/purchase-order"
+            to="/purchase-orders"
             className="text-white hover:text-gray-300 px-4 py-2 inline-block transition duration-300 ease-in-out rounded-full"
             activeClassName="bg-pink-500"
           >
